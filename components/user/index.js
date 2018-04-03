@@ -1,8 +1,8 @@
-var path        = require('path');
-var serveStatic = require('serve-static');
-var UserModel   = require('./models/userModel')();
+let path        = require('path'),
+    serveStatic = require('serve-static');
 
 module.exports = function(app) {
+  let UserModel = require('./models/userModel')(app);
 
   app.use(serveStatic(path.join(__dirname, 'public')));
 
@@ -43,9 +43,9 @@ module.exports = function(app) {
     render('settings')
   ]);
 
-  app.put('/settings', [
+  app.post('/settings', [
     middleware.updateUser,
-    redirect('/settings')
+    redirect('/')
   ]);
 
   app.get('/register', [

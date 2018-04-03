@@ -4,8 +4,8 @@ module.exports = {
 
   port: port,
   request_timeout: 100000,
-  session_secret: "base12secret",
-  log_requests: false,
+  session_secret: "quadRacingSecret",
+  log_requests: true,
   stylus_compress: 1,
   stylus_debug: 1,
   stylus_force: 1,
@@ -16,8 +16,8 @@ module.exports = {
     auth: "",
     debug: false
   },
-  mongoose_url: "mongodb://localhost/base12",
+  mongoose_url: "mongodb://localhost/quadracing",
   send_mail: true,
-  contact_email: "jim@skookum.com",
+  contact_email: "snodgrass23@gmail.com",
   host: "http://localhost:"+port
 };

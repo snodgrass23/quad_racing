@@ -2,9 +2,14 @@ var utils = require('mongoose-utils'),
     mongoose = require('mongoose');
 
 module.exports = function() {
+  const resultSchema = require('./result')();
 
   var Race = new mongoose.Schema({
-
+    class: String,
+    format: String,
+    status: String,
+    start_at: Date,
+    results: resultSchema
   }, {strict:true});
 
   // Plugins
@@ -20,5 +25,5 @@ module.exports = function() {
 
   // Export
 
-  return mongoose.model('Race', Race);
+  return Race;
 };

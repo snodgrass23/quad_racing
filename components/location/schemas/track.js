@@ -3,14 +3,14 @@ var utils = require('mongoose-utils'),
 
 module.exports = function() {
 
-  var Event = new mongoose.Schema({
-
+  var Track = new mongoose.Schema({
+    name: String
   }, {strict:true});
 
   // Plugins
 
-  Event.plugin(utils.plugin.timestamps);
-  Event.plugin(utils.plugin.extendedMethods);
+  Track.plugin(utils.plugin.timestamps);
+  Track.plugin(utils.plugin.extendedMethods);
 
   // Getters and Setters
 
@@ -20,5 +20,5 @@ module.exports = function() {
 
   // Export
 
-  return mongoose.model('Event', Event);
+  return Track;
 };

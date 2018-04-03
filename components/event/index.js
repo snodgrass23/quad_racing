@@ -1,9 +1,13 @@
-const EventModel   = require('./models/eventModel')();
+const EventSchema = require('./schemas/event')(),
+      RaceSchema  = require('./schemas/race')();
 
 module.exports = function(app) {
 
   // hook model and other helpers into app
-  app.race = {
-    model: EventModel
+  app.event = {
+    schemas: {
+      event: EventSchema,
+      race: RaceSchema
+    }
   };
 };

@@ -2,12 +2,16 @@ const utils = require('mongoose-utils'),
       bcrypt = require('bcrypt'),
       mongoose = require('mongoose');
 
-module.exports = function() {
+module.exports = function(app) {
+
+  const chapterSchema = app.chapter.schemas.chapter;
 
   let User = new mongoose.Schema({
     email         : { type: String, index: true, required:true, lowercase: true, trim:true, unique: true, validate: [utils.validate.email, 'not valid'] },
     name          : { type: String, trim: true },
     handle        : { type: String, trim: true },
+    chapters      : [chapterSchema],
+    homeChapter   : chapterSchema,
     password      : { type: String, trim: true, required:true, validate: [utils.validate.length(4), 'required to be at least 4 characters'] },
     resetPassword : { type: Boolean, 'default':false }
   }, {strict:true});

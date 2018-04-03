@@ -18,8 +18,8 @@ module.exports = function(app) {
           return next();
         }
       }
-
       User.findByIdAndUpdateX(req.session.user._id, req.body, function(err, user) {
+        console.log("Updating user with: ", req.body);
         if (err) {
           console.log(err);
           req.flash("There was an error updating the user.");

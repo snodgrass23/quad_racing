@@ -2,7 +2,7 @@ module.exports = {
   port: 8000,
   stylus_debug: false,
   test: true,
-  mongoose_url: "mongodb://localhost/base12_test",
-  session_secret: "base12secret_test",
+  mongoose_url: "mongodb://localhost/quadracing_test",
+  session_secret: "quadRacingSecret_test",
   send_mail: false
 };

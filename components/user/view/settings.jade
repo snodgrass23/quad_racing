@@ -1,17 +1,13 @@
 extends ../../../shared/views/layout
 
-block subject
-
 block content
 
   section.smallColumn.centered.pushDown
-    p.tac: a.logo.block(href='/')
-      span.is_hidden base12
+    h2 Quad Racing Event Manager
 
-    form(action='/settings', method='post', enctype="multipart/form-data")
+    form(action='/settings', method='post')
       .title-bar
         h1 Profile Settings
-      input(type="hidden", name="_method", value="put")
       ul
         li
           label(for="email") Email Address
@@ -19,6 +15,9 @@ block content
         li
           label(for="name") Name
           input.block(type='text', name='name', placeholder="name", value=current_user.name)
+        li
+          label(for="handle") Pilot Handle
+          input.block(type='text', name='handle', placeholder="pilot handle", value=current_user.handle)
         li
           label(for="new_password") New Password
           input.block(type='password', name='new_password', placeholder="new password")

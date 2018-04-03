@@ -21,7 +21,11 @@ var emailer     = require('./lib/emailer');
 
 // Require our components
 
+var chapter     = require('./components/chapter');
+var event       = require('./components/event');
+var location    = require('./components/location');
 var user        = require('./components/user');
+var quadcopter  = require('./components/quadcopter');
 var dashboard   = require('./components/dashboard');
 var errors      = require('./components/errors');
 
@@ -48,7 +52,11 @@ function createApp(config) {
   reload();
 
   // components
+  chapter(app, config);
+  event(app, config);
+  location(app, config);
   user(app, config);
+  quadcopter(app, config);
   dashboard(app, config);
   errors(app, config);
 

@@ -5,11 +5,14 @@ block title
 
 block content
   section.smallColumn.centered.pushDown
-    p.tac: a.logo.block(href='/')
-      span.is_hidden Quad Racing Event Manager
 
-    h2 Welcome to Quad Racing Event Manager
+    h2 Quad Racing Event Manager
 
     ul.tac
       li.pad: a(href="/settings") User Settings
       li.pad: a(href="/signout") Signout
+
+    h2 Pilot Info
+    ul
+      li.pad= current_user.name
+      li.pad= current_user.handle

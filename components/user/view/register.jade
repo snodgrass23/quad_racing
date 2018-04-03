@@ -1,12 +1,9 @@
 extends ../../../shared/views/layout
 
-block subject
-
 block content
 
   section.smallColumn.centered.pushDown
-    p.tac: a.logo.block(href='/')
-      span.is_hidden base12
+    h2 Register for Quad Racing Event Manager
 
     form(action='/register', method='post')
       input.block(type='text', name='name', placeholder='name')
