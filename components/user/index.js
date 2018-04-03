@@ -16,6 +16,14 @@ module.exports = function(app) {
       req.flash('Please log in first.');
       return res.redirect('/');
     },
+    getAllPilots: function(req, res, next) {
+      UserModel.find()
+                .select('name handle')
+                .exec((err, users) => {
+        req.session.allPilots = users;
+        next();
+      });
+    },
     model: UserModel
   };
 

@@ -16,3 +16,8 @@ block content
     ul
       li.pad= current_user.name
       li.pad= current_user.handle
+
+    h2 Registered Pilots
+    ul
+      each pilot in allPilots
+        li.pad= `${pilot.name} (${pilot.handle})`
