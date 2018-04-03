@@ -1,0 +1,24 @@
+{
+  "laxbreak": true,
+  "laxcomma": true,
+  "maxlen": 120,
+  "newcap": true,
+  "trailing": true,
+  "maxcomplexity": 8,
+  "maxdepth": 3,
+  "maxparams": 4,
+  "undef": true,
+  "unused": true,
+  "node": true,
+  "esversion": 6,
+  "strict": false,
+  "predef": [
+    "after",
+    "afterEach",
+    "before",
+    "beforeEach",
+    "context",
+    "describe",
+    "it"
+  ]
+}

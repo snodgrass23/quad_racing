@@ -1,6 +1,6 @@
 var path        = require('path');
 var serveStatic = require('serve-static');
-var UserModel   = require('./model/userModel')();
+var UserModel   = require('./models/userModel')();
 
 module.exports = function(app) {
 

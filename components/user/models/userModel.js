@@ -1,12 +1,13 @@
-var utils = require('mongoose-utils'),
-    bcrypt = require('bcrypt'),
-    mongoose = require('mongoose');
+const utils = require('mongoose-utils'),
+      bcrypt = require('bcrypt'),
+      mongoose = require('mongoose');
 
 module.exports = function() {
 
-  var User = new mongoose.Schema({
+  let User = new mongoose.Schema({
     email         : { type: String, index: true, required:true, lowercase: true, trim:true, unique: true, validate: [utils.validate.email, 'not valid'] },
     name          : { type: String, trim: true },
+    handle        : { type: String, trim: true },
     password      : { type: String, trim: true, required:true, validate: [utils.validate.length(4), 'required to be at least 4 characters'] },
     resetPassword : { type: Boolean, 'default':false }
   }, {strict:true});
@@ -19,12 +20,12 @@ module.exports = function() {
   // Getters and Setters
 
   function encrypt(plain) {
-    var salt = bcrypt.genSaltSync(10);
+    let salt = bcrypt.genSaltSync(10);
     return bcrypt.hashSync(plain, salt);
   }
 
   User.path('password').set(function(password) {
-    var hashed = encrypt(password);
+    let hashed = encrypt(password);
     if (password && password.length >= 4) return hashed;
     // pass short chars to fail length validation
     return "f";

@@ -1,12 +1,12 @@
 {
-  "name": "b12prj",
-  "version": "0.0.3",
+  "name": "quad_racing",
+  "version": "0.0.1",
   "directories": {},
   "engines": {
-    "node": "5.x"
+    "node": "8.x"
   },
   "dependencies": {
-    "bcrypt": "0.8.5",
+    "bcrypt": "latest",
     "body-parser": "^1.15.0",
     "compression": "^1.6.1",
     "connect": "3.4.1",
