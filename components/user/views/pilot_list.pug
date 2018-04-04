@@ -9,4 +9,4 @@ block content
   h2 Registered Pilots
   ul
     each pilot in pilots
-      li.pad= `${pilot.name} (${pilot.handle})`
+      li.pad: a(href=`/pilots/${pilot.handle}`)= `${pilot.name} (${pilot.handle})`

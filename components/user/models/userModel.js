@@ -35,6 +35,15 @@ module.exports = function(app) {
     return "f";
   });
 
+  // Instance methods
+
+  User.methods.full_name = function() {
+    let nameParts = this.name.split(" ");
+    if (nameParts.length == 2 && this.handle) {
+      return `${nameParts[0]} (${this.handle}) ${nameParts[1]}`
+    }
+  }
+
   // Static methods
 
   User.statics.authenticate = function(creds, callback) {

@@ -1,6 +1,5 @@
 setup:
 	yarn
-	npm run lock
 
 clean:
 	rm -rf node_modules

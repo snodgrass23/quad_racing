@@ -6,7 +6,4 @@ block title
 block content
   h2 Quad Racing Event Manager
 
-  h2 Pilot Info
-  ul
-    li.pad= current_user.name
-    li.pad= current_user.handle
+  p= `Welcome ${current_user.full_name}`
