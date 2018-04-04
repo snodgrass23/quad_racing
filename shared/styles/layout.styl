@@ -1,3 +1,5 @@
+header_height = 3em
+
 *
   -moz-box-sizing border-box
   -webkit-box-sizing border-box
@@ -10,9 +12,10 @@ html, body
   padding 5px
 
 .wrap
-  absolute top bottom
-  left 20% 
-  right 20%
+  absolute bottom
+  top header_height
+  left 10%
+  right 10%
 
 .pad
   padding 0.5em
@@ -31,6 +34,7 @@ html, body
 
 .column1of3
   width 33%
+  display inline-block
 
 .centered
   margin 0 auto
@@ -48,7 +52,7 @@ html, body
   display block
 
 .flash-messages
-  position absolute 
+  position absolute
   top 0
   left 20%
   right 20%
@@ -62,8 +66,8 @@ html, body
 
 input
   padding 0.4em
-  
-  
+
+
   &.block
     width 100%
     margin 0.75em 0

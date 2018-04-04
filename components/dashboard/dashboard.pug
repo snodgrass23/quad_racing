@@ -4,20 +4,18 @@ block title
   | Dashboard - Quad Racing Event Manager
 
 block content
-  section.smallColumn.centered.pushDown
+  h2 Quad Racing Event Manager
 
-    h2 Quad Racing Event Manager
+  ul.tac
+    li.pad: a(href="/settings") User Settings
+    li.pad: a(href="/signout") Signout
 
-    ul.tac
-      li.pad: a(href="/settings") User Settings
-      li.pad: a(href="/signout") Signout
+  h2 Pilot Info
+  ul
+    li.pad= current_user.name
+    li.pad= current_user.handle
 
-    h2 Pilot Info
-    ul
-      li.pad= current_user.name
-      li.pad= current_user.handle
-
-    h2 Registered Pilots
-    ul
-      each pilot in allPilots
-        li.pad= `${pilot.name} (${pilot.handle})`
+  h2 Registered Pilots
+  ul
+    each pilot in allPilots
+      li.pad= `${pilot.name} (${pilot.handle})`

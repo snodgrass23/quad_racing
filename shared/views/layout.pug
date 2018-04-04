@@ -15,7 +15,17 @@ body
   //- flash messages from messages lib
   messages()
 
-  .wrap.centered.pad2
+  .header.pad
+    h1.column1of3
+      a(href='/') Quad Racing
+    .column1of3
+    .column1of3.pilot.tar
+      if current_user
+        a(href='/settings')= current_user.handle || current_user.name
+      else
+        a(href='/signin') Login
+
+  .content.pad
 
     block content
 
