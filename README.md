@@ -21,6 +21,8 @@ If there is an issue with bcrypt or node-gyp see: https://github.com/kelektiv/no
 
 ### [Stylus](http://stylus-lang.com/) for CSS preprocessing
 
+Includes [Nib](http://stylus.github.io/nib/)
+
 - Optional colons
 - Optional semi-colons
 - Optional commas
