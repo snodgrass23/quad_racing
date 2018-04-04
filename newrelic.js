@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name : ['Base12'],
+  app_name : ['QuadRacing'],
   /**
    * Your New Relic license key.
    */
