@@ -1,8 +1,20 @@
-module.exports = function(app) {
-
-  var User = app.user.model;
+module.exports = function(app, User) {
 
   return {
+
+    getPilot: function(req, res, next) {
+      User.findOne({handle: req.params.pilotHandle}).select('name handle').exec((err, pilot) => {
+        res.locals.pilot = pilot;
+        next();
+      });
+    },
+
+    getAllPilots: function(req, res, next) {
+      User.find().select('name handle').exec((err, pilots) => {
+        res.locals.pilots = pilots;
+        next();
+      });
+    },
 
     endSession: function(req, res, next) {
       req.session.regenerate(next);

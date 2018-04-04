@@ -1,0 +1,12 @@
+extends ../../../shared/views/layout
+
+block title
+  | Chapter List - Quad Racing Event Manager
+
+block content
+  h2 Quad Racing Event Manager
+
+  h2 All Chapters
+  ul
+    each chapter in chapters
+      li.pad= chapter.name

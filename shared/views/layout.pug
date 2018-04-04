@@ -22,8 +22,14 @@ body
     .column1of3.pilot.tar
       if current_user
         a(href='/settings')= current_user.handle || current_user.name
+        a(href="/signout") X
       else
         a(href='/signin') Login
+
+  ul.menu.tar
+    li: a(href='/events') Events
+    li: a(href='/chapters') Chapters
+    li: a(href='/pilots') Pilots
 
   .content.pad
 

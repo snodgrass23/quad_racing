@@ -1,0 +1,12 @@
+extends ../../../shared/views/layout
+
+block title
+  | Pilots - Quad Racing Event Manager
+
+block content
+  h2 Quad Racing Event Manager
+
+  h2 Registered Pilots
+  ul
+    each pilot in pilots
+      li.pad= `${pilot.name} (${pilot.handle})`
