@@ -1,6 +1,5 @@
 setup:
-	npm install
-	bower install
+	yarn
 
 clean:
 	rm -rf node_modules
@@ -9,17 +8,17 @@ setup-clean: clean setup
 
 start: simple
 
-simple:
+simple: setup
 	node app.js simple
 
-open:
+open: setup
 	(sleep 2 && open http://localhost:3000) &
 	node app.js run $(filter-out $@,$(MAKECMDGOALS))
 
-run:
+run: setup
 	node app.js run $(filter-out $@,$(MAKECMDGOALS))
 
-cycle:
+cycle: setup
 	node app.js cycle $(filter-out $@,$(MAKECMDGOALS))
 
 profile:

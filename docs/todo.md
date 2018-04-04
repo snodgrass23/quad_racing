@@ -18,3 +18,4 @@
   - build compile tasks for production js/css
     - grunt, webpack, etc
   - determine optimal running mode on Heroku servers (simple, balance, etc)
+  - determine email functionality plan

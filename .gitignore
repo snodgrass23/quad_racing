@@ -4,3 +4,4 @@ config.local.js
 public/uploads
 public/scripts/components
 /newrelic_agent.log
+/yarn-error.log

@@ -29,15 +29,19 @@
     "underscore": "1.8.3"
   },
   "devDependencies": {
-    "mocha": "2.4.5",
-    "should": "8.2.2",
     "grunt": "0.4.5",
     "grunt-contrib-clean": "0.7.0",
-    "grunt-contrib-copy": "0.8.2",
     "grunt-contrib-concat": "0.5.1",
-    "grunt-contrib-uglify": "0.11.1"
+    "grunt-contrib-copy": "0.8.2",
+    "grunt-contrib-uglify": "0.11.1",
+    "mocha": "2.4.5",
+    "should": "8.2.2"
   },
   "scripts": {
     "lock": "scripts/module_lock.js"
-  }
+  },
+  "main": "app.js",
+  "repository": "https://github.com/snodgrass23/quad_racing",
+  "author": "Jim Snodgrass <snodgrass23@gmail.com>",
+  "license": "MIT"
 }
