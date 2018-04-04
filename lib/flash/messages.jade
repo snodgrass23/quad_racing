@@ -1,5 +1,0 @@
-mixin messages()
-  ul.flash-messages
-    - var messages = (typeof getMessages === 'undefined') ? [] : getMessages()
-    - each message in messages
-      li!= message

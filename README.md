@@ -17,6 +17,56 @@ make open
 
 If there is an issue with bcrypt or node-gyp see: https://github.com/kelektiv/node.bcrypt.js
 
+## Libraries used
+
+### [Stylus](http://stylus-lang.com/) for CSS preprocessing
+
+- Optional colons
+- Optional semi-colons
+- Optional commas
+- Optional braces
+- Variables
+- Interpolation
+- Mixins
+- Arithmetic
+- Type coercion
+- Dynamic importing
+- Conditionals
+- Iteration
+- Nested selectors
+- Parent referencing
+- Variable function calls
+- Lexical scoping
+- Built-in functions (over 60)
+- In-language functions
+- Optional compression
+- Optional image inlining
+- Stylus executable
+- Robust error reporting
+- Single-line and multi-line comments
+- CSS literal for those tricky times
+- Character escaping
+- TextMate bundle
+- and more!
+
+### [Pug](https://pugjs.org/api/getting-started.html) for HTML preprocessing
+
+- [Attributes](https://pugjs.org/language/attributes.html)
+- [Case](https://pugjs.org/language/case.html)
+- [Code](https://pugjs.org/language/code.html)
+- [Comments](https://pugjs.org/language/comments.html)
+- [Conditionals](https://pugjs.org/language/conditionals.html)
+- [Doctype](https://pugjs.org/language/doctype.html)
+- [Filters](https://pugjs.org/language/filters.html)
+- [Includes](https://pugjs.org/language/includes.html)
+- [Inheritance: Extends and Block](https://pugjs.org/language/inheritance.html)
+- [Interpolation](https://pugjs.org/language/interpolation.html)
+- [Iteration](https://pugjs.org/language/iteration.html)
+- [Mixins](https://pugjs.org/language/mixins.html)
+- [Plain Text](https://pugjs.org/language/plain-text.html)
+- [Tags](https://pugjs.org/language/tags.html)
+
+
 ## Make commands
 
 #### Install all modules
