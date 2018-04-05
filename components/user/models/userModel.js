@@ -39,11 +39,11 @@ module.exports = function(app) {
 
   User.methods.full_name = function() {
     let nameParts = this.name.split(" ");
-    console.log('here: ', nameParts);
     if (nameParts.length == 2 && this.handle) {
       return `${nameParts[0]} (${this.handle}) ${nameParts[1]}`
+    } else {
+      return `${this.name} (${this.handle})`;
     }
-    return 'blah';
   };
 
   // Static methods

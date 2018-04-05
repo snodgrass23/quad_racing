@@ -2,7 +2,7 @@ module.exports = function(app, Chapter) {
 
   return {
     getChapter: function(req, res, next) {
-      Chapter.findById(req.params.id).select('name').exec((err, chapter) => {
+      Chapter.findById(req.params.id).exec((err, chapter) => {
         res.locals.chapter = chapter;
         next();
       });
