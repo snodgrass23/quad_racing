@@ -7,16 +7,19 @@ module.exports = function(app) {
 
   app.get('/', [
     app.user.checkPasswordReset,
-    app.user.getAllPilots,
+    setPilotHandle,
+    app.user.getPilot,
     (req, res) => {
       if (req.session.user) {
-        return res.render(path.join(__dirname, 'views/dashboard'), {
-          allPilots: req.session.allPilots,
-          user: req.session.user
-        });
+        return res.render(path.join(__dirname, 'views/dashboard'));
       } else {
         return res.render(path.join(__dirname, 'views/welcome'));
       }
     }
   ]);
 };
+
+function setPilotHandle(req, res, next) {
+  req.params.pilotHandle = req.session.user && req.session.user.handle;
+  next();
+}

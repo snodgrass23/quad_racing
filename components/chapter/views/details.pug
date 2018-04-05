@@ -4,6 +4,7 @@ block title
   | Chapter Details - Quad Racing Event Manager
 
 block content
-  h2 Quad Racing Event Manager
 
-  h2 Chapters Details
+  h2= `${chapter.name} Details`
+
+  !=inspect(chapter, 'Chapter')

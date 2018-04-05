@@ -2,7 +2,7 @@ module.exports = function(app, Event) {
 
   return {
     getEvent: function(req, res, next) {
-      Event.findOne({handle: req.params.name}).select('name').exec((err, event) => {
+      Event.findById(req.params.id).exec((err, event) => {
         res.locals.event = event;
         next();
       });
@@ -14,5 +14,13 @@ module.exports = function(app, Event) {
         next();
       });
     },
+
+    createEvent: function(req, res, next) {
+      Event.create(req.body, function(err) {
+        // TODO: better error
+        req.flash(err ? err : 'Event created!');
+        next();
+      });
+    }
   };
 };

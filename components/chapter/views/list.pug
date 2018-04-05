@@ -4,9 +4,12 @@ block title
   | Chapter List - Quad Racing Event Manager
 
 block content
-  h2 Quad Racing Event Manager
+  form(action='/chapters', method='post')
+    ul.inline
+      li: input(name='name', placeholder="chapter name")
+      li: button.button-submit(type='submit') Create
 
   h2 All Chapters
   ul
     each chapter in chapters
-      li.pad= chapter.name
+      li.pad: a(href=`/chapters/${chapter._id}`)= chapter.name

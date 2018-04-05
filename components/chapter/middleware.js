@@ -2,7 +2,7 @@ module.exports = function(app, Chapter) {
 
   return {
     getChapter: function(req, res, next) {
-      Chapter.findOne({handle: req.params.name}).select('name').exec((err, chapter) => {
+      Chapter.findById(req.params.id).select('name').exec((err, chapter) => {
         res.locals.chapter = chapter;
         next();
       });
@@ -14,5 +14,13 @@ module.exports = function(app, Chapter) {
         next();
       });
     },
+
+    createChapter: function(req, res, next) {
+      Chapter.create(req.body, function(err) {
+        // TODO: better error
+        req.flash(err ? err : 'Chapter created!');
+        next();
+      });
+    }
   };
 };

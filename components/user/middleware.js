@@ -3,14 +3,14 @@ module.exports = function(app, User) {
   return {
 
     getPilot: function(req, res, next) {
-      User.findOne({handle: req.params.pilotHandle}).select('name handle').exec((err, pilot) => {
+      User.findOne({handle: req.params.pilotHandle}).exec((err, pilot) => {
         res.locals.pilot = pilot;
         next();
       });
     },
 
     getAllPilots: function(req, res, next) {
-      User.find().select('name handle').exec((err, pilots) => {
+      User.find().exec((err, pilots) => {
         res.locals.pilots = pilots;
         next();
       });
@@ -76,7 +76,7 @@ module.exports = function(app, User) {
       });
     },
 
-    resetPassword: function(req,res,next) {
+    resetPassword: function(req, res, next) {
       User.findByEmail(req.body.email, function(err, user) {
         if (err || !user || user.length < 1) {
           req.flash("Sorry, that email does not seem to be registered.");

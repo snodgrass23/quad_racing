@@ -12,9 +12,6 @@ html
 
 body
 
-  //- flash messages from messages lib
-  messages()
-
   .header.pad
     h1.column1of3
       a(href='/') Quad Racing
@@ -26,12 +23,14 @@ body
       else
         a(href='/signin') Login
 
-  ul.menu.tar
+  ul.menu.inline.tar
     li: a(href='/events') Events
     li: a(href='/chapters') Chapters
     li: a(href='/pilots') Pilots
 
   .content.pad
+    //- flash messages from messages lib
+    +messages()
 
     block content
 

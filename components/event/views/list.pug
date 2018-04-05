@@ -4,9 +4,12 @@ block title
   | Events - Quad Racing Event Manager
 
 block content
-  h2 Quad Racing Event Manager
+  form(action='/events', method='post')
+    ul.inline
+      li: input(name='name', placeholder="event name")
+      li: button.button-submit(type='submit') Create
 
   h2 Events List
   ul
     each event in events
-      li.pad= event.name
+      li.pad: a(href=`/events/${event._id}`)= event.name

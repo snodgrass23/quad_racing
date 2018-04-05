@@ -6,5 +6,6 @@ block title
 block content
   h2 Quad Racing Event Manager
 
-  h2 Pilot Details for
-    =pilot.name
+  h2= `Pilot Details for ${pilot.full_name()}`
+
+  !=inspect(pilot, "Pilot Details")

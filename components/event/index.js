@@ -19,14 +19,25 @@ module.exports = function(app) {
     render('list')
   ]);
 
-  app.get('/events/:name', [
+  app.get('/events/:id', [
     middleware.getEvent,
     render('details')
+  ]);
+
+  app.post('/events', [
+    middleware.createEvent,
+    redirect('/events')
   ]);
 };
 
 function render(view) {
   return function (req, res) {
     return res.render(path.join(__dirname, 'views/'+view));
+  };
+}
+
+function redirect(url) {
+  return function (req, res) {
+    return res.redirect(url);
   };
 }

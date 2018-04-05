@@ -17,9 +17,14 @@ module.exports = function(app) {
     render('list')
   ]);
 
-  app.get('/chapters/:name', [
+  app.get('/chapters/:id', [
     middleware.getChapter,
     render('details')
+  ]);
+
+  app.post('/chapters', [
+    middleware.createChapter,
+    redirect('/chapters')
   ]);
 };
 
@@ -27,5 +32,11 @@ module.exports = function(app) {
 function render(view) {
   return function (req, res) {
     return res.render(path.join(__dirname, 'views/'+view));
+  };
+}
+
+function redirect(url) {
+  return function (req, res) {
+    return res.redirect(url);
   };
 }

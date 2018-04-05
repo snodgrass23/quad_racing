@@ -18,6 +18,7 @@ module.exports = function(app) {
       return res.redirect('/');
     },
     getAllPilots: middleware.getAllPilots,
+    getPilot: middleware.getPilot,
     checkPasswordReset: function(req, res, next) {
       if (req.session.user && req.session.user.resetPassword) {
         req.session.user.resetPassword = false;

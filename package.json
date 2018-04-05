@@ -19,7 +19,7 @@
         "express-session": "^1.13.0",
         "pug": "2.0.3",
         "method-override": "^2.3.5",
-        "mongoose": "4.4.3",
+        "mongoose": "5.0.12",
         "mongoose-utils": "0.0.2",
         "newrelic": "1.25.1",
         "nib": "1.1.2",
