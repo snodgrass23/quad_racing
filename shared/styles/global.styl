@@ -17,3 +17,13 @@ global-reset()
 @import '../../components/user/styles/main'
 @import '../../components/dashboard/styles/main'
 @import '../../components/errors/styles/main'
+
+html, body, .container-fluid, .row
+  height: 100%
+
+.sidebar
+  z-index: 1000
+  overflow-x: hidden
+  overflow-y: auto
+  .nav-item
+    width: 100%

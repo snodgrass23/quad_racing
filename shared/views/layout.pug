@@ -11,31 +11,39 @@ html
       link(rel='stylesheet', href='/styles/global.css' )
 
 body
-
-  .header.pad
-    h1.column1of3
-      a(href='/') Quad Racing
-    .column1of3
-    .column1of3.pilot.tar
-      if current_user
-        a(href='/settings')= current_user.handle || current_user.name
-        a(href="/signout") X
-      else
-        a(href='/signin') Login
-
-  ul.menu.inline.tar
-    li: a(href='/events') Events
-    li: a(href='/chapters') Chapters
-    li: a(href='/pilots') Pilots
-
-  .container
-    //- flash messages from messages lib
-    +messages()
-
-    block content
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+    .container-fluid
+      a.navbar-brand(href='/') Quad Racing
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          if current_user
+            li.nav-item
+              a.nav-link(href='/settings')= current_user.handle || current_user.name
+            li.nav-item
+              a.nav-link(href="/signout")             
+          else
+            li.nav-item
+              a.nav-link(href='/signin') Login
+            
+  // +messages()
+  .container-fluid
+    .row
+      .col-md-2.bg-light.sidebar.p-3
+        ul.nav.nav-pills.flex-column
+          li.nav-item
+            a.nav-link.active(href='/') Home
+          li.nav-item
+            a.nav-link(href='/events') Events
+          li.nav-item
+            a.nav-link(href='/pilots') Pilots
+          li.nav-item
+            a.nav-link(href='/chapters') Chapters
+        
+      .col-md-10.offset-md-2.offset-md-0
+        block content
 
   block scripts
-    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js", integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", crossorigin="anonymous")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js", integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", crossorigin="anonymous")
-    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", crossorigin="anonymous")
-    script(src="/scripts/main.js")
+    script(src="/scripts/compiled/components.js")
+    script(src="/scripts/main.js") */

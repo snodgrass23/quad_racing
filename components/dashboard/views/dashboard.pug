@@ -4,9 +4,10 @@ block title
   | Dashboard - Quad Racing Event Manager
 
 block content
-  h2 Quad Racing Event Manager
-
-  p= `Welcome ${pilot.full_name()}`
-
-  !=inspect(current_user, "Current User")
-  !=inspect(pilot, "Pilot")
+  // p= `Welcome, ${pilot.full_name()}!`
+  
+  .row
+    .col-12
+      h2.mt-3 Your Schedule
+  
+  
